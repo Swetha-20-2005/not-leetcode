@@ -1,0 +1,34 @@
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+head=Node(10)
+b=Node(20)
+c=Node(30)
+d=Node(50)
+
+head.next=b
+b.next=c
+c.next=d
+
+pos=3
+new=Node(40)
+
+temp=head
+for i in range(pos-1):
+    temp=temp.next
+new.next=temp.next
+temp.next=new
+
+
+temp=head
+while(temp!=None):
+    print(temp.data,end="->")
+    temp=temp.next
+print("None")
+
+OUTPUT:
+
+10->20->30->40->50->Null
